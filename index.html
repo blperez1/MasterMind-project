@@ -12,12 +12,12 @@
 <body>
 <main class="shadow">
     <h1 id="top">Break Me</h1>
-    <p>(check console for description</p>
-    <h2><span class="red">Red</span> = right color right spot | <span class="white">White</span> = right color wrong spot</h2>
+    <p>(check console for description)</p>
+    <h2 class="colorDescription"><span class="red">Red</span> = right color right spot | <span class="white">White</span> = right color wrong spot</h2>
     <h5 class="thin">(no particular order)</h5><br>
-    <p><span><strong>Options: </strong><em>(Type in lower case)  </em></span><span class="blue">blue</span>, <span class="brown">brown</span>, <span class="yellow">yellow</span>, <span class="orange">orange</span>, <span class="green">green</span> and <span class="pink">pink</span></p><br>
+    <p><span><strong>Options: </strong></span><span class="blue">Blue</span>, <span class="brown">Brown</span>, <span class="yellow">Yellow</span>, <span class="orange">Orange</span>, <span class="green">Green</span> and <span class="pink">Pink</span></p><br>
     <button id="increaseDiff">Hard Mode</button><p id="isHardMode"></p><br>
-    <p class="otherColors">(Add <span class="grey">grey</span>, <span class="cyan">cyan</span>, <span class="olive">olive</span>, <span class="tan">tan</span>, <span class="purple">purple</span> and <span class="lime">lime</span>)</p><br>
+    <p class="otherColors">(Add <span class="grey">Grey</span>, <span class="cyan">Cyan</span>, <span class="olive">Olive</span>, <span class="tan">Tan</span>, <span class="purple">Purple</span> and <span class="lime">Lime</span>)</p><br>
 </main>
 <button id="newGame">Start Game</button><br>
 <textarea rows="9" cols="100" class="notes">Not In Sequence:
@@ -28,19 +28,19 @@ In Sequence: </textarea>
 <div class="gameBoard">
     <div class="inputs">
         <label for="colorInput1">First Color </label>
-        <input class="colorGuess" id="colorInput1" type="text" placeholder="text" onfocus="this.value=''"><br>
+        <input class="colorGuess" id="colorInput1" type="text" placeholder="here" onfocus="this.value=''"><br>
     </div>
     <div class="inputs">
         <label for="colorInput2">Second Color </label>
-        <input class="colorGuess"  id="colorInput2" type="text" placeholder="text" onfocus="this.value=''"><br>
+        <input class="colorGuess"  id="colorInput2" type="text" placeholder="here" onfocus="this.value=''"><br>
     </div>
     <div class="inputs">
         <label for="colorInput3">Third Color </label>
-        <input class="colorGuess"  id="colorInput3" type="text" placeholder="text" onfocus="this.value=''"><br>
+        <input class="colorGuess"  id="colorInput3" type="text" placeholder="here" onfocus="this.value=''"><br>
     </div>
     <div class="inputs">
         <label for="colorInput4">Fourth Color </label>
-        <input class="colorGuess"  id="colorInput4" type="text" placeholder="text" onfocus="this.value=''"><br>
+        <input class="colorGuess"  id="colorInput4" type="text" placeholder="here" onfocus="this.value=''"><br>
     </div>
     <button type="submit" id="submit">Assert</button><br>
     <p id="winner"></p><br>
@@ -58,7 +58,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="one"></span></td>
+            <td><span id="one"></span><span id="oneWhite"></span></td>
         </tr>
         <tr>
             <td>#2</td>
@@ -66,7 +66,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="two"></span></td>
+            <td><span id="two"></span><span id="twoWhite"></span></td>
         </tr>
         <tr>
             <td>#3</td>
@@ -74,7 +74,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="three"></span></td>
+            <td><span id="three"></span><span id="threeWhite"></span></td>
         </tr>
         <tr>
             <td>#4</td>
@@ -82,7 +82,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="four"></span></td>
+            <td><span id="four"></span><span id="fourWhite"></span></td>
         </tr>
         <tr>
             <td>#5</td>
@@ -90,7 +90,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="five"></span></td>
+            <td><span id="five"></span><span id="fiveWhite"></span></td>
         </tr>
         <tr>
             <td>#6</td>
@@ -98,7 +98,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="six"></span></td>
+            <td><span id="six"></span><span id="sixWhite"></span></td>
         </tr>
         <tr>
             <td>#7</td>
@@ -106,7 +106,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="seven"></span></td>
+            <td><span id="seven"></span><span id="sevenWhite"></span></td>
         </tr>
         <tr>
             <td>#8</td>
@@ -114,7 +114,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="eight"></span></td>
+            <td><span id="eight"></span><span id="eightWhite"></span></td>
         </tr>
         <tr>
             <td>#9</td>
@@ -122,7 +122,7 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="nine"></span></td>
+            <td><span id="nine"></span><span id="nineWhite"></span></td>
         </tr>
         <tr>
             <td>#10</td>
@@ -130,10 +130,10 @@ In Sequence: </textarea>
         </tr>
         <tr>
             <td>R/W</td>
-            <td><span id="ten"></span></td>
+            <td><span id="ten"></span><span id="tenWhite"></span></td>
         </tr>
     </table>
-    <button id="done">Finish</button>
+    <button id="done"><span class="red">Show</span>  <span class="white">Solution</span></button>
 </div>
 <div class="answerKey">
     <h3>Answer key:</h3>
