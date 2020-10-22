@@ -214,71 +214,70 @@
             your14.innerHTML = fourth;
             your14.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -301,71 +300,70 @@
             your24.innerHTML = fourth;
             your24.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -387,71 +385,70 @@
             your34.innerHTML = fourth;
             your34.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
             if (rCRS === 4) {
                 gameWon.innerText = "Winner!";
@@ -473,71 +470,70 @@
             your44.innerHTML = fourth;
             your44.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -559,71 +555,70 @@
             your54.innerHTML = fourth;
             your54.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -646,71 +641,70 @@
             your64.innerHTML = fourth;
             your64.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -732,71 +726,70 @@
             your74.innerHTML = fourth;
             your74.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -818,71 +811,70 @@
             your84.innerHTML = fourth;
             your84.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -905,71 +897,70 @@
             your94.innerHTML = fourth;
             your94.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
@@ -991,71 +982,70 @@
             your104.innerHTML = fourth;
             your104.style.color = guess4.value;
 
-            if(isDuplicate){
-                for(let i = 0; i < newKey.length; i++){
-                    if(newKey[i] === first){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(first, "").split(" ");
-                    }
-                    if(newKey[i] === second){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(second, "").split(" ");
-                    }
-                    if(newKey[i] === third){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(third, "").split(" ");
-                    }
-                    if(newKey[i] === fourth){
-                        rCRS++;
-                        newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                    }
-                }
-                if(newKey.indexOf(first) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if(newKey.indexOf(second) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if(newKey.indexOf(third) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if(newKey.indexOf(fourth) !== -1){
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
-            } else {
+            // if(isDuplicate){
+            //     for(let i = 0; i < newKey.length; i++){
+            //         if(newKey[i] === first){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(first, "").split(" ");
+            //         }
+            //         if(newKey[i] === second){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(second, "").split(" ");
+            //         }
+            //         if(newKey[i] === third){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(third, "").split(" ");
+            //         }
+            //         if(newKey[i] === fourth){
+            //             rCRS++;
+            //             newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //         }
+            //     }
+            //     if(newKey.indexOf(first) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(first, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(second) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(second, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(third) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(third, "").split(" ");
+            //     }
+            //     if(newKey.indexOf(fourth) !== -1){
+            //         rCWS++;
+            //         newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            //     }
+            // } else {
 
-                if (first === newKey[0]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                } else if (newKey.indexOf(first) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(first, "").split(" ");
-                }
-                if (second === newKey[1]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                } else if (newKey.indexOf(second) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(second, "").split(" ");
-                }
-                if (third === newKey[2]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                } else if (newKey.indexOf(third) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(third, "").split(" ");
-                }
-                if (fourth === newKey[3]) {
-                    rCRS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                } else if (newKey.indexOf(fourth) !== -1) {
-                    rCWS++;
-                    newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                }
+            if (first === newKey[0]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            } else if (newKey.indexOf(first) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(first, "").split(" ");
+            }
+            if (second === newKey[1]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            } else if (newKey.indexOf(second) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(second, "").split(" ");
+            }
+            if (third === newKey[2]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            } else if (newKey.indexOf(third) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(third, "").split(" ");
+            }
+            if (fourth === newKey[3]) {
+                rCRS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
+            } else if (newKey.indexOf(fourth) !== -1) {
+                rCWS++;
+                newKey = newKey.join(" ").replace(fourth, "").split(" ");
             }
 
             if (rCRS === 4) {
