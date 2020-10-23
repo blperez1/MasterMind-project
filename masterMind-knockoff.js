@@ -40,7 +40,7 @@
     let hardKey4 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
     hardMode.addEventListener("click", function () {
         hard = true;
-        hardMode.style.color = "aliceblue";
+        hardMode.style.color = "#14bdeb";
         hardMode.style.background = "black";
         isHard.innerText = "Enabled";
     });
@@ -162,6 +162,8 @@
     response10W.style.color = "white";
 
     newGame.addEventListener("click", function () {
+        newGame.style.color = "#14bdeb";
+        newGame.style.background = "black";
         if (hard) {
             sequence.push(hardColorKey[hardKey1]);
             sequence.push(hardColorKey[hardKey2]);
@@ -180,6 +182,10 @@
             answer2.innerHTML = sequence[1];
             answer3.innerHTML = sequence[2];
             answer4.innerHTML = sequence[3];
+            guess1.style.background = "#000000";
+            guess2.style.background = "#000000";
+            guess3.style.background = "#000000";
+            guess4.style.background = "#000000";
             guess1.disabled = true;
             guess2.disabled = true;
             guess3.disabled = true;

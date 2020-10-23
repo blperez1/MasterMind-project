@@ -75,6 +75,9 @@ button:hover{
 #isHardMode{
     margin-bottom: -0.5em;
 }
+input:focus::placeholder{
+    color: transparent;
+}
 .notes{
     /*background: transparent;*/
     background-color: #202020;
