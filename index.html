@@ -15,11 +15,11 @@
     <p>(check console for description)</p>
     <h2 class="colorDescription"><span class="red">Red</span> = right color right spot | <span class="white">White</span> = right color wrong spot</h2>
     <h5 class="thin">(no particular order)</h5><br>
-    <p><span><strong>Options: </strong></span><span class="blue">Blue</span>, <span class="brown">Brown</span>, <span class="yellow">Yellow</span>, <span class="orange">Orange</span>, <span class="green">Green</span> and <span class="pink">Pink</span></p><br>
     <button id="increaseDiff">Hard Mode</button><p id="isHardMode"></p><br>
     <p class="otherColors">(Hard Mode Adds: <span class="grey">Grey</span>, <span class="cyan">Cyan</span>, <span class="olive">Olive</span>, <span class="tan">Tan</span>, <span class="purple">Purple</span> and <span class="lime">Lime</span>)</p><br>
+    <button id="newGame">Start Game</button>
+    <p class="easyOptions"><span><strong>Options: </strong></span><span class="blue">Blue</span>, <span class="brown">Brown</span>, <span class="yellow">Yellow</span>, <span class="orange">Orange</span>, <span class="green">Green</span> and <span class="pink">Pink</span></p><br>
 </main>
-<button id="newGame">Start Game</button><br>
 <textarea rows="9" cols="100" class="notes">Not In Sequence:
 
 Possible Colors:
@@ -45,7 +45,7 @@ In Sequence: </textarea>
     <button type="submit" id="submit">Assert</button><br>
     <p id="winner"></p><br>
 </div>
-<div id="responses">
+<div class="responses">
     <table class="guesses">
         <tr>
             <td><h3>Response:</h3></td>
@@ -137,8 +137,8 @@ In Sequence: </textarea>
 </div>
 <div class="answerKey">
     <h3>Answer key:</h3>
-    <h2><span id="key1">--- ---</span> | <span id="key2">-- --</span> | <span id="key3">-- --</span> | <span id="key4">-- --</span></h2><br>
-    <p id="link">Go To Top -> <a href="#top">Click</a></p><br>
+    <h2><span id="key1">--</span> | <span id="key2">--</span> | <span id="key3">--</span> | <span id="key4">--</span></h2><br>
+    <button id="link"><a href="#top">^GO TO TOP^</a></button>
 </div>
 <script src="masterMind-knockoff.js"></script>
 </body>
