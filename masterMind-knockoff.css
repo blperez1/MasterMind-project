@@ -3,6 +3,9 @@ body {
     color: #d3d5d6;
     text-align: center;
     font-family: "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .shadow{
     text-shadow: 1px 1px black;
@@ -13,7 +16,13 @@ body {
     color: #797B84;
 }
 .thin{
-    margin-top: 1px;
+    margin: 1px 0;
+}
+.easyOptions{
+    margin-bottom: 0;
+}
+p{
+    margin: .5em 0;
 }
 .colorDescription{
     margin-bottom: 5px;
@@ -27,8 +36,17 @@ body {
     font-family:"Press Start 2P", "Helvetica Neue", sans-serif;
     font-size: 3em;
     color: #14BDEB;
+    margin: .25em auto;
 }
-
+.responses{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: #d3d5d6;
+}
 .responseRed{
     color: red;
 }
@@ -38,7 +56,7 @@ h3{
 }
 button{
     color: #FFFAFB;
-    background-color: #7a7265;
+    background-color: #4d473d;
     border-radius: 25%;
     transition-duration: .5s;
 }
@@ -52,10 +70,13 @@ button:hover{
 }
 .otherColors{
     margin-top: -0.5em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 #isHardMode{
     margin-bottom: -0.5em;
+}
+input:focus::placeholder{
+    color: transparent;
 }
 .notes{
     /*background: transparent;*/
@@ -63,6 +84,7 @@ button:hover{
     border: #080708;
     color: #FFFAFB;
     padding: 2em;
+    max-width: 90vw;
 }
 .colorGuess{
     border:#080708;
