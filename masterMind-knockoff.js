@@ -184,6 +184,7 @@
 
     }
     const textRestart = function(){
+        gameWon.innerText = "";
         isHard.innerText = "";
         answer1.innerHTML = "--";
         answer2.innerHTML = "--";
@@ -340,7 +341,6 @@
         onClick(count);
         count++;
     });
-
     function onClick(){
         let newKey = sequence;
         let firstIsRed = false;
@@ -349,11 +349,11 @@
         let fourthIsRed = false;
         let rCRS = 0;
         let rCWS = 0;
+        let first = guess1.value.toLowerCase();
+        let second = guess2.value.toLowerCase();
+        let third = guess3.value.toLowerCase();
+        let fourth = guess4.value.toLowerCase();
         if (count === 0) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your11.innerHTML = first;
             your11.style.color = guess1.value;
             your12.innerHTML = second;
@@ -407,10 +407,6 @@
             response1.innerText = rCRS + " Red ";
             response1W.innerText = rCWS + " White";
         } else if (count === 1) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your21.innerHTML = first;
             your21.style.color = guess1.value;
             your22.innerHTML = second;
@@ -463,10 +459,6 @@
             response2.innerText = rCRS + " Red ";
             response2W.innerText = rCWS + " White";
         } else if (count === 2) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your31.innerHTML = first;
             your31.style.color = guess1.value;
             your32.innerHTML = second;
@@ -520,10 +512,6 @@
             response3.innerText = rCRS + " Red ";
             response3W.innerText = rCWS + " White";
         } else if (count === 3) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your41.innerHTML = first;
             your41.style.color = guess1.value;
             your42.innerHTML = second;
@@ -576,10 +564,6 @@
             response4.innerText = rCRS + " Red ";
             response4W.innerText = rCWS + " White";
         } else if (count === 4) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your51.innerHTML = first;
             your51.style.color = guess1.value;
             your52.innerHTML = second;
@@ -633,10 +617,6 @@
             response5.innerText = rCRS + " Red ";
             response5W.innerText = rCWS + " White";
         } else if (count === 5) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your61.innerHTML = first;
             your61.style.color = guess1.value;
             your62.innerHTML = second;
@@ -689,10 +669,6 @@
             response6.innerText = rCRS + " Red ";
             response6W.innerText = rCWS + " White";
         } else if (count === 6) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your71.innerHTML = first;
             your71.style.color = guess1.value;
             your72.innerHTML = second;
@@ -745,10 +721,6 @@
             response7.innerText = rCRS + " Red ";
             response7W.innerText = rCWS + " White";
         } else if (count === 7) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your81.innerHTML = first;
             your81.style.color = guess1.value;
             your82.innerHTML = second;
@@ -802,10 +774,6 @@
             response8.innerText = rCRS + " Red ";
             response8W.innerText = rCWS + " White";
         } else if (count === 8) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your91.innerHTML = first;
             your91.style.color = guess1.value;
             your92.innerHTML = second;
@@ -858,10 +826,6 @@
             response9.innerText = rCRS + " Red ";
             response9W.innerText = rCWS + " White";
         } else if (count === 9) {
-            let first = guess1.value.toLowerCase();
-            let second = guess2.value.toLowerCase();
-            let third = guess3.value.toLowerCase();
-            let fourth = guess4.value.toLowerCase();
             your101.innerHTML = first;
             your101.style.color = guess1.value;
             your102.innerHTML = second;
