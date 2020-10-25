@@ -98,6 +98,15 @@ input:focus::placeholder{
     background-color: #111212;
     font-size: .9em;
 }
+#textCycle1{
+    color: #fffaff;
+}
+#textCycle2{
+    color: #ff2e00;
+}
+#link{
+    background-color: #111212;
+}
 .red{
     color: #ff2e00;
 }
