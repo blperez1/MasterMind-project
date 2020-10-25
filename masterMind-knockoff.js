@@ -30,26 +30,17 @@
         "cyan",
         "tan"
     ];
-
+    let sequence = [];
     let hardMode = document.getElementById("increaseDiff");
     let hard = false;
     let isHard = document.getElementById("isHardMode");
-    let hardKey1 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-    let hardKey2 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-    let hardKey3 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-    let hardKey4 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
     hardMode.addEventListener("click", function () {
         hard = true;
         hardMode.style.color = "#14bdeb";
         hardMode.style.background = "black";
         isHard.innerText = "Enabled";
+        hardMode.disabled = true;
     });
-
-    let key1 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-    let key2 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-    let key3 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-    let key4 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-    let sequence = [];
 
     let newGame = document.getElementById("newGame");
     let done = document.getElementById("done");
@@ -161,22 +152,134 @@
     let response10W = document.getElementById("tenWhite");
     response10W.style.color = "white";
 
+    let restart = document.getElementById("link");
+    let newText = document.getElementById("textCycle1");
+    let gameText = document.getElementById("textCycle2");
+    let restartCount = 0;
+    const reloadGame = function(restartCount){
+        if(restartCount % 2 === 0){
+            newText.style.color = "#ff2e00";
+            gameText.style.color = "#fffaff";
+        } else {
+            newText.style.color = "#fffaff";
+            gameText.style.color = "#ff2e00";
+        }
+        textRestart();
+        hard = false;
+        sequence = [];
+        hardMode.style.color = "#fffafb";
+        hardMode.style.background = "#4d473d";
+        newGame.style.color = "#fffafb";
+        newGame.style.background = "#4d473d";
+        hardMode.disabled = false;
+        newGame.disabled = false;
+        guess1.style.background = "#171717";
+        guess2.style.background = "#171717";
+        guess3.style.background = "#171717";
+        guess4.style.background = "#171717";
+        guess1.disabled = false;
+        guess2.disabled = false;
+        guess3.disabled = false;
+        guess4.disabled = false;
+
+    }
+    const textRestart = function(){
+        isHard.innerText = "";
+        answer1.innerHTML = "--";
+        answer2.innerHTML = "--";
+        answer3.innerHTML = "--";
+        answer4.innerHTML = "--";
+        response1.innerText = "";
+        response1W.innerText = "";
+        response2.innerText = "";
+        response2W.innerText = "";
+        response3.innerText = "";
+        response3W.innerText = "";
+        response4.innerText = "";
+        response4W.innerText = "";
+        response5.innerText = "";
+        response5W.innerText = "";
+        response6.innerText = "";
+        response6W.innerText = "";
+        response7.innerText = "";
+        response7W.innerText = "";
+        response8.innerText = "";
+        response8W.innerText = "";
+        response9.innerText = "";
+        response9W.innerText = "";
+        response10.innerText = "";
+        response10W.innerText = "";
+        your11.innerText = "..";
+        your12.innerText = "..";
+        your13.innerText = "..";
+        your14.innerText = "..";
+        your21.innerText = "..";
+        your22.innerText = "..";
+        your23.innerText = "..";
+        your24.innerText = "..";
+        your31.innerText = "..";
+        your32.innerText = "..";
+        your33.innerText = "..";
+        your34.innerText = "..";
+        your41.innerText = "..";
+        your42.innerText = "..";
+        your43.innerText = "..";
+        your44.innerText = "..";
+        your51.innerText = "..";
+        your52.innerText = "..";
+        your53.innerText = "..";
+        your54.innerText = "..";
+        your61.innerText = "..";
+        your62.innerText = "..";
+        your63.innerText = "..";
+        your64.innerText = "..";
+        your71.innerText = "..";
+        your72.innerText = "..";
+        your73.innerText = "..";
+        your74.innerText = "..";
+        your81.innerText = "..";
+        your82.innerText = "..";
+        your83.innerText = "..";
+        your84.innerText = "..";
+        your91.innerText = "..";
+        your92.innerText = "..";
+        your93.innerText = "..";
+        your94.innerText = "..";
+        your101.innerText = "..";
+        your102.innerText = "..";
+        your103.innerText = "..";
+        your104.innerText = "..";
+        begin.innerText = "";
+    }
+    restart.addEventListener("click", function(){
+        reloadGame(restartCount);
+        restartCount++;
+    });
+
     newGame.addEventListener("click", function () {
         newGame.style.color = "#14bdeb";
         newGame.style.background = "black";
+        let key1 = Math.floor(Math.random() * colorKey.length - 1) + 1;
+        let key2 = Math.floor(Math.random() * colorKey.length - 1) + 1;
+        let key3 = Math.floor(Math.random() * colorKey.length - 1) + 1;
+        let key4 = Math.floor(Math.random() * colorKey.length - 1) + 1;
+        let hardKey1 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
+        let hardKey2 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
+        let hardKey3 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
+        let hardKey4 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
         if (hard) {
             sequence.push(hardColorKey[hardKey1]);
             sequence.push(hardColorKey[hardKey2]);
             sequence.push(hardColorKey[hardKey3]);
             sequence.push(hardColorKey[hardKey4]);
-            begin.innerText = "Sequence Generated";
         } else {
             sequence.push(colorKey[key1]);
             sequence.push(colorKey[key2]);
             sequence.push(colorKey[key3]);
             sequence.push(colorKey[key4]);
-            begin.innerText = "Sequence Generated";
         }
+        begin.innerText = "Sequence Generated";
+        newGame.disabled = true;
         done.addEventListener("click", function () {
             answer1.innerHTML = sequence[0];
             answer2.innerHTML = sequence[1];
