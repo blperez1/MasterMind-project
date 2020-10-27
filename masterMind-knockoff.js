@@ -57,7 +57,11 @@
     let guess2 = document.getElementById("colorInput2");
     let guess3 = document.getElementById("colorInput3");
     let guess4 = document.getElementById("colorInput4");
-
+    // class selects
+    let yourGuesses = document.getElementsByClassName("yourColor");
+    let colorInputFields = document.getElementsByClassName("colorGuess");
+    let redResponses = document.getElementsByClassName("outputRed");
+    let whiteResponses = document.getElementsByClassName("outputWhite");
     //your inputs
     let your11 = document.getElementById("you11");
     let your12 = document.getElementById("you12");
@@ -111,47 +115,32 @@
 
     //response
     let begin = document.getElementById("start");
+    for(let i = 0; i < redResponses.length; i++){
+        redResponses[i].style.color = "red";
+    }
+    for(let i = 0; i < whiteResponses.length; i++){
+        whiteResponses[i].style.color = "white";
+    }
     let response1 = document.getElementById("one");
-    response1.style.color = "red";
     let response1W = document.getElementById("oneWhite");
-    response1W.style.color = "white";
     let response2 = document.getElementById("two");
-    response2.style.color = "red";
     let response2W = document.getElementById("twoWhite");
-    response2W.style.color = "white";
     let response3 = document.getElementById("three");
-    response3.style.color = "red";
     let response3W = document.getElementById("threeWhite");
-    response3W.style.color = "white";
     let response4 = document.getElementById("four");
-    response4.style.color = "red";
     let response4W = document.getElementById("fourWhite");
-    response4W.style.color = "white";
     let response5 = document.getElementById("five");
-    response5.style.color = "red";
     let response5W = document.getElementById("fiveWhite");
-    response5W.style.color = "white";
     let response6 = document.getElementById("six");
-    response6.style.color = "red";
     let response6W = document.getElementById("sixWhite");
-    response6W.style.color = "white";
     let response7 = document.getElementById("seven");
-    response7.style.color = "red";
     let response7W = document.getElementById("sevenWhite");
-    response7W.style.color = "white";
     let response8 = document.getElementById("eight");
-    response8.style.color = "red";
     let response8W = document.getElementById("eightWhite");
-    response8W.style.color = "white";
     let response9 = document.getElementById("nine");
-    response9.style.color = "red";
     let response9W = document.getElementById("nineWhite");
-    response9W.style.color = "white";
     let response10 = document.getElementById("ten");
-    response10.style.color = "red";
     let response10W = document.getElementById("tenWhite");
-    response10W.style.color = "white";
-
     let restart = document.getElementById("link");
     let newText = document.getElementById("textCycle1");
     let gameText = document.getElementById("textCycle2");
@@ -173,15 +162,10 @@
         newGame.style.background = "#4d473d";
         hardMode.disabled = false;
         newGame.disabled = false;
-        guess1.style.background = "#171717";
-        guess2.style.background = "#171717";
-        guess3.style.background = "#171717";
-        guess4.style.background = "#171717";
-        guess1.disabled = false;
-        guess2.disabled = false;
-        guess3.disabled = false;
-        guess4.disabled = false;
-
+        for(let i = 0; i < colorInputFields.length; i++){
+            colorInputFields[i].style.background = "#171717";
+            colorInputFields[i].disabled = false;
+        }
     }
     const textRestart = function(){
         gameWon.innerText = "";
@@ -190,106 +174,16 @@
         answer2.innerHTML = "--";
         answer3.innerHTML = "--";
         answer4.innerHTML = "--";
-        response1.innerText = "";
-        response1W.innerText = "";
-        response2.innerText = "";
-        response2W.innerText = "";
-        response3.innerText = "";
-        response3W.innerText = "";
-        response4.innerText = "";
-        response4W.innerText = "";
-        response5.innerText = "";
-        response5W.innerText = "";
-        response6.innerText = "";
-        response6W.innerText = "";
-        response7.innerText = "";
-        response7W.innerText = "";
-        response8.innerText = "";
-        response8W.innerText = "";
-        response9.innerText = "";
-        response9W.innerText = "";
-        response10.innerText = "";
-        response10W.innerText = "";
-        your11.innerText = "..";
-        your11.style.color = "#797B84";
-        your12.innerText = "..";
-        your12.style.color = "#797B84";
-        your13.innerText = "..";
-        your13.style.color = "#797B84";
-        your14.innerText = "..";
-        your14.style.color = "#797B84";
-        your21.innerText = "..";
-        your21.style.color = "#797B84";
-        your22.innerText = "..";
-        your22.style.color = "#797B84";
-        your23.innerText = "..";
-        your23.style.color = "#797B84";
-        your24.innerText = "..";
-        your24.style.color = "#797B84";
-        your31.innerText = "..";
-        your31.style.color = "#797B84";
-        your32.innerText = "..";
-        your32.style.color = "#797B84";
-        your33.innerText = "..";
-        your33.style.color = "#797B84";
-        your34.innerText = "..";
-        your34.style.color = "#797B84";
-        your41.innerText = "..";
-        your41.style.color = "#797B84";
-        your42.innerText = "..";
-        your42.style.color = "#797B84";
-        your43.innerText = "..";
-        your43.style.color = "#797B84";
-        your44.innerText = "..";
-        your44.style.color = "#797B84";
-        your51.innerText = "..";
-        your51.style.color = "#797B84";
-        your52.innerText = "..";
-        your52.style.color = "#797B84";
-        your53.innerText = "..";
-        your53.style.color = "#797B84";
-        your54.innerText = "..";
-        your54.style.color = "#797B84";
-        your61.innerText = "..";
-        your61.style.color = "#797B84";
-        your62.innerText = "..";
-        your62.style.color = "#797B84";
-        your63.innerText = "..";
-        your63.style.color = "#797B84";
-        your64.innerText = "..";
-        your64.style.color = "#797B84";
-        your71.innerText = "..";
-        your71.style.color = "#797B84";
-        your72.innerText = "..";
-        your72.style.color = "#797B84";
-        your73.innerText = "..";
-        your73.style.color = "#797B84";
-        your74.innerText = "..";
-        your74.style.color = "#797B84";
-        your81.innerText = "..";
-        your81.style.color = "#797B84";
-        your82.innerText = "..";
-        your82.style.color = "#797B84";
-        your83.innerText = "..";
-        your83.style.color = "#797B84";
-        your84.innerText = "..";
-        your84.style.color = "#797B84";
-        your91.innerText = "..";
-        your91.style.color = "#797B84";
-        your92.innerText = "..";
-        your92.style.color = "#797B84";
-        your93.innerText = "..";
-        your93.style.color = "#797B84";
-        your94.innerText = "..";
-        your94.style.color = "#797B84";
-        your101.innerText = "..";
-        your101.style.color = "#797B84";
-        your102.innerText = "..";
-        your102.style.color = "#797B84";
-        your103.innerText = "..";
-        your103.style.color = "#797B84";
-        your104.innerText = "..";
-        your104.style.color = "#797B84";
+        for(let i = 0; i < redResponses.length; i++){
+            redResponses[i].innerText = "";
+        }
+        for(let i = 0; i < whiteResponses.length; i++){
+            whiteResponses[i].innerText = "";
+        }
+        for(let i = 0; i < yourGuesses.length; i++){
+            yourGuesses[i].innerText = "..";
+            yourGuesses[i].style.color = "#797b84";
+        }
         begin.innerText = "";
     }
     restart.addEventListener("click", function(){
@@ -301,24 +195,16 @@
     newGame.addEventListener("click", function () {
         newGame.style.color = "#14bdeb";
         newGame.style.background = "black";
-        let key1 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-        let key2 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-        let key3 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-        let key4 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-        let hardKey1 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-        let hardKey2 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-        let hardKey3 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-        let hardKey4 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
         if (hard) {
-            sequence.push(hardColorKey[hardKey1]);
-            sequence.push(hardColorKey[hardKey2]);
-            sequence.push(hardColorKey[hardKey3]);
-            sequence.push(hardColorKey[hardKey4]);
+            for(let i = 0; i < 4; i++){
+                let hardKey1 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
+                sequence.push(hardColorKey[hardKey1]);
+            }
         } else {
-            sequence.push(colorKey[key1]);
-            sequence.push(colorKey[key2]);
-            sequence.push(colorKey[key3]);
-            sequence.push(colorKey[key4]);
+            for(let i = 0; i < 4; i++){
+                let key1 = Math.floor(Math.random() * colorKey.length - 1) + 1;
+                sequence.push(colorKey[key1]);
+            }
         }
         begin.innerText = "Sequence Generated";
         newGame.disabled = true;
@@ -327,28 +213,84 @@
             answer2.innerHTML = sequence[1];
             answer3.innerHTML = sequence[2];
             answer4.innerHTML = sequence[3];
-            guess1.style.background = "#000000";
-            guess2.style.background = "#000000";
-            guess3.style.background = "#000000";
-            guess4.style.background = "#000000";
-            guess1.disabled = true;
-            guess2.disabled = true;
-            guess3.disabled = true;
-            guess4.disabled = true;
+            for(let i = 0; i < colorInputFields.length; i++){
+                colorInputFields[i].style.background = "#000000";
+                colorInputFields[i].disabled = true;
+            }
         });
     });
     assert.addEventListener("click", function(){
         onClick(count);
         count++;
     });
-    function onClick(){
-        let newKey = sequence;
+    let won = false;
+
+    function reds(first, second, third, fourth, colorArr) {
+        let rCRS = 0;
+        if (first === colorArr[0]) {
+            rCRS++;
+            colorArr = colorArr.join(" ").replace(first, "").split(" ");
+        }
+        if (second === colorArr[1]) {
+            rCRS++;
+            colorArr = colorArr.join(" ").replace(second, "").split(" ");
+        }
+        if (third === colorArr[2]) {
+            rCRS++;
+            colorArr = colorArr.join(" ").replace(third, "").split(" ");
+        }
+        if (fourth === colorArr[3]) {
+            rCRS++;
+            colorArr = colorArr.join(" ").replace(fourth, "").split(" ");
+        }
+        if(rCRS === 4){
+            won = true;
+        }
+        return rCRS + " Red ";
+    }
+    function whites(first, second, third, fourth, colorArr) {
+        let rCWS = 0;
         let firstIsRed = false;
         let secondIsRed = false;
         let thirdIsRed = false;
         let fourthIsRed = false;
-        let rCRS = 0;
-        let rCWS = 0;
+        if (first === colorArr[0]) {
+            colorArr = colorArr.join(" ").replace(first, "").split(" ");
+            firstIsRed = true;
+        }
+        if (second === colorArr[1]) {
+            colorArr = colorArr.join(" ").replace(second, "").split(" ");
+            secondIsRed = true;
+        }
+        if (third === colorArr[2]) {
+            colorArr = colorArr.join(" ").replace(third, "").split(" ");
+            thirdIsRed = true;
+        }
+        if (fourth === colorArr[3]) {
+            colorArr = colorArr.join(" ").replace(fourth, "").split(" ");
+            fourthIsRed = true;
+        }
+        if (colorArr.indexOf(first) !== -1 && !firstIsRed) {
+            rCWS++;
+            colorArr = colorArr.join(" ").replace(first, "").split(" ");
+        }
+        if (colorArr.indexOf(second) !== -1 && !secondIsRed) {
+            rCWS++;
+            colorArr = colorArr.join(" ").replace(second, "").split(" ");
+        }
+        if (colorArr.indexOf(third) !== -1 && !thirdIsRed) {
+            rCWS++;
+            colorArr = colorArr.join(" ").replace(third, "").split(" ");
+        }
+        if (colorArr.indexOf(fourth) !== -1 && !fourthIsRed) {
+            rCWS++;
+            colorArr = colorArr.join(" ").replace(fourth, "").split(" ");
+        }
+        return rCWS + " White";
+    }
+
+    function onClick(){
+        let newKey = sequence;
         let first = guess1.value.toLowerCase();
         let second = guess2.value.toLowerCase();
         let third = guess3.value.toLowerCase();
@@ -363,49 +305,9 @@
             your14.innerHTML = fourth;
             your14.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response1.innerText = reds(first, second, third, fourth, newKey);
+            response1W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-
-            response1.innerText = rCRS + " Red ";
-            response1W.innerText = rCWS + " White";
         } else if (count === 1) {
             your21.innerHTML = first;
             your21.style.color = guess1.value;
@@ -416,48 +318,9 @@
             your24.innerHTML = fourth;
             your24.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response2.innerText = reds(first, second, third, fourth, newKey);
+            response2W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-            response2.innerText = rCRS + " Red ";
-            response2W.innerText = rCWS + " White";
         } else if (count === 2) {
             your31.innerHTML = first;
             your31.style.color = guess1.value;
@@ -468,49 +331,9 @@
             your34.innerHTML = fourth;
             your34.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response3.innerText = reds(first, second, third, fourth, newKey);
+            response3W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-
-            response3.innerText = rCRS + " Red ";
-            response3W.innerText = rCWS + " White";
         } else if (count === 3) {
             your41.innerHTML = first;
             your41.style.color = guess1.value;
@@ -521,48 +344,9 @@
             your44.innerHTML = fourth;
             your44.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response4.innerText = reds(first, second, third, fourth, newKey);
+            response4W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-            response4.innerText = rCRS + " Red ";
-            response4W.innerText = rCWS + " White";
         } else if (count === 4) {
             your51.innerHTML = first;
             your51.style.color = guess1.value;
@@ -573,49 +357,9 @@
             your54.innerHTML = fourth;
             your54.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response5.innerText = reds(first, second, third, fourth, newKey);
+            response5W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-
-            response5.innerText = rCRS + " Red ";
-            response5W.innerText = rCWS + " White";
         } else if (count === 5) {
             your61.innerHTML = first;
             your61.style.color = guess1.value;
@@ -626,48 +370,9 @@
             your64.innerHTML = fourth;
             your64.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response6.innerText = reds(first, second, third, fourth, newKey);
+            response6W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-            response6.innerText = rCRS + " Red ";
-            response6W.innerText = rCWS + " White";
         } else if (count === 6) {
             your71.innerHTML = first;
             your71.style.color = guess1.value;
@@ -678,48 +383,9 @@
             your74.innerHTML = fourth;
             your74.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response7.innerText = reds(first, second, third, fourth, newKey);
+            response7W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-            response7.innerText = rCRS + " Red ";
-            response7W.innerText = rCWS + " White";
         } else if (count === 7) {
             your81.innerHTML = first;
             your81.style.color = guess1.value;
@@ -730,49 +396,9 @@
             your84.innerHTML = fourth;
             your84.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response8.innerText = reds(first, second, third, fourth, newKey);
+            response8W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-
-            response8.innerText = rCRS + " Red ";
-            response8W.innerText = rCWS + " White";
         } else if (count === 8) {
             your91.innerHTML = first;
             your91.style.color = guess1.value;
@@ -783,48 +409,9 @@
             your94.innerHTML = fourth;
             your94.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
+            response9.innerText = reds(first, second, third, fourth, newKey);
+            response9W.innerText = whites(first, second, third, fourth, newKey);
 
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-            response9.innerText = rCRS + " Red ";
-            response9W.innerText = rCWS + " White";
         } else if (count === 9) {
             your101.innerHTML = first;
             your101.style.color = guess1.value;
@@ -835,48 +422,11 @@
             your104.innerHTML = fourth;
             your104.style.color = guess4.value;
 
-            if (first === newKey[0]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-                firstIsRed = true;
-            }
-            if (second === newKey[1]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-                secondIsRed = true;
-            }
-            if (third === newKey[2]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-                thirdIsRed = true;
-            }
-            if (fourth === newKey[3]) {
-                rCRS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-                fourthIsRed = true;
-            }
-            if (newKey.indexOf(first) !== -1 && !firstIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(first, "").split(" ");
-            }
-            if (newKey.indexOf(second) !== -1 && !secondIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(second, "").split(" ");
-            }
-            if (newKey.indexOf(third) !== -1 && !thirdIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(third, "").split(" ");
-            }
-            if (newKey.indexOf(fourth) !== -1 && !fourthIsRed) {
-                rCWS++;
-                newKey = newKey.join(" ").replace(fourth, "").split(" ");
-            }
-
-            if (rCRS === 4) {
-                gameWon.innerText = "Winner!";
-            }
-            response10.innerText = rCRS + " Red ";
-            response10W.innerText = rCWS + " White";
+            response10.innerText = reds(first, second, third, fourth, newKey);
+            response10W.innerText = whites(first, second, third, fourth, newKey);
+        }
+        if(won){
+            gameWon.innerText = "Winner!";
         }
     }
 })();
