@@ -42,6 +42,7 @@
         hardMode.disabled = true;
     });
 
+    let won = false;
     let newGame = document.getElementById("newGame");
     let done = document.getElementById("done");
     let gameWon = document.getElementById("winner");
@@ -61,66 +62,20 @@
     let yourGuesses = document.getElementsByClassName("yourColor");
     let colorInputFields = document.getElementsByClassName("colorGuess");
     let redResponses = document.getElementsByClassName("outputRed");
-    let whiteResponses = document.getElementsByClassName("outputWhite");
-    //your inputs
-    let your11 = document.getElementById("you11");
-    let your12 = document.getElementById("you12");
-    let your13 = document.getElementById("you13");
-    let your14 = document.getElementById("you14");
-
-    let your21 = document.getElementById("you21");
-    let your22 = document.getElementById("you22");
-    let your23 = document.getElementById("you23");
-    let your24 = document.getElementById("you24");
-
-    let your31 = document.getElementById("you31");
-    let your32 = document.getElementById("you32");
-    let your33 = document.getElementById("you33");
-    let your34 = document.getElementById("you34");
-
-    let your41 = document.getElementById("you41");
-    let your42 = document.getElementById("you42");
-    let your43 = document.getElementById("you43");
-    let your44 = document.getElementById("you44");
-
-    let your51 = document.getElementById("you51");
-    let your52 = document.getElementById("you52");
-    let your53 = document.getElementById("you53");
-    let your54 = document.getElementById("you54");
-
-    let your61 = document.getElementById("you61");
-    let your62 = document.getElementById("you62");
-    let your63 = document.getElementById("you63");
-    let your64 = document.getElementById("you64");
-
-    let your71 = document.getElementById("you71");
-    let your72 = document.getElementById("you72");
-    let your73 = document.getElementById("you73");
-    let your74 = document.getElementById("you74");
-
-    let your81 = document.getElementById("you81");
-    let your82 = document.getElementById("you82");
-    let your83 = document.getElementById("you83");
-    let your84 = document.getElementById("you84");
-
-    let your91 = document.getElementById("you91");
-    let your92 = document.getElementById("you92");
-    let your93 = document.getElementById("you93");
-    let your94 = document.getElementById("you94");
-
-    let your101 = document.getElementById("you101");
-    let your102 = document.getElementById("you102");
-    let your103 = document.getElementById("you103");
-    let your104 = document.getElementById("you104");
-
-    //response
-    let begin = document.getElementById("start");
     for(let i = 0; i < redResponses.length; i++){
         redResponses[i].style.color = "red";
     }
+    let whiteResponses = document.getElementsByClassName("outputWhite");
     for(let i = 0; i < whiteResponses.length; i++){
         whiteResponses[i].style.color = "white";
     }
+    //your inputs
+    let firstC = document.getElementsByClassName("c1");
+    let secondC = document.getElementsByClassName("c2");
+    let thirdC = document.getElementsByClassName("c3");
+    let fourthC = document.getElementsByClassName("c4");
+    //response
+    let begin = document.getElementById("start");
     let response1 = document.getElementById("one");
     let response1W = document.getElementById("oneWhite");
     let response2 = document.getElementById("two");
@@ -145,6 +100,7 @@
     let newText = document.getElementById("textCycle1");
     let gameText = document.getElementById("textCycle2");
     let restartCount = 0;
+
     const reloadGame = function(restartCount){
         if(restartCount % 2 === 0){
             newText.style.color = "#ff2e00";
@@ -154,26 +110,27 @@
             gameText.style.color = "#ff2e00";
         }
         textRestart();
-        hard = false;
-        sequence = [];
-        hardMode.style.color = "#fffafb";
-        hardMode.style.background = "#4d473d";
-        newGame.style.color = "#fffafb";
-        newGame.style.background = "#4d473d";
-        hardMode.disabled = false;
-        newGame.disabled = false;
         for(let i = 0; i < colorInputFields.length; i++){
             colorInputFields[i].style.background = "#171717";
             colorInputFields[i].disabled = false;
         }
     }
     const textRestart = function(){
+        hard = false;
+        sequence = [];
+        hardMode.disabled = false;
+        newGame.disabled = false;
         gameWon.innerText = "";
         isHard.innerText = "";
         answer1.innerHTML = "--";
         answer2.innerHTML = "--";
         answer3.innerHTML = "--";
         answer4.innerHTML = "--";
+        begin.innerText = "";
+        hardMode.style.color = "#fffafb";
+        hardMode.style.background = "#4d473d";
+        newGame.style.color = "#fffafb";
+        newGame.style.background = "#4d473d";
         for(let i = 0; i < redResponses.length; i++){
             redResponses[i].innerText = "";
         }
@@ -184,7 +141,6 @@
             yourGuesses[i].innerText = "..";
             yourGuesses[i].style.color = "#797b84";
         }
-        begin.innerText = "";
     }
     restart.addEventListener("click", function(){
         count = 0;
@@ -206,6 +162,7 @@
                 sequence.push(colorKey[key1]);
             }
         }
+        console.log(sequence);
         begin.innerText = "Sequence Generated";
         newGame.disabled = true;
         done.addEventListener("click", function () {
@@ -219,11 +176,11 @@
             }
         });
     });
+
     assert.addEventListener("click", function(){
         onClick(count);
         count++;
     });
-    let won = false;
 
     function reds(first, second, third, fourth, colorArr) {
         let rCRS = 0;
@@ -248,6 +205,7 @@
         }
         return rCRS + " Red ";
     }
+
     function whites(first, second, third, fourth, colorArr) {
         let rCWS = 0;
         let firstIsRed = false;
@@ -296,135 +254,53 @@
         let third = guess3.value.toLowerCase();
         let fourth = guess4.value.toLowerCase();
         if (count === 0) {
-            your11.innerHTML = first;
-            your11.style.color = guess1.value;
-            your12.innerHTML = second;
-            your12.style.color = guess2.value;
-            your13.innerHTML = third;
-            your13.style.color = guess3.value;
-            your14.innerHTML = fourth;
-            your14.style.color = guess4.value;
-
             response1.innerText = reds(first, second, third, fourth, newKey);
             response1W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 1) {
-            your21.innerHTML = first;
-            your21.style.color = guess1.value;
-            your22.innerHTML = second;
-            your22.style.color = guess2.value;
-            your23.innerHTML = third;
-            your23.style.color = guess3.value;
-            your24.innerHTML = fourth;
-            your24.style.color = guess4.value;
-
             response2.innerText = reds(first, second, third, fourth, newKey);
             response2W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 2) {
-            your31.innerHTML = first;
-            your31.style.color = guess1.value;
-            your32.innerHTML = second;
-            your32.style.color = guess2.value;
-            your33.innerHTML = third;
-            your33.style.color = guess3.value;
-            your34.innerHTML = fourth;
-            your34.style.color = guess4.value;
-
             response3.innerText = reds(first, second, third, fourth, newKey);
             response3W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 3) {
-            your41.innerHTML = first;
-            your41.style.color = guess1.value;
-            your42.innerHTML = second;
-            your42.style.color = guess2.value;
-            your43.innerHTML = third;
-            your43.style.color = guess3.value;
-            your44.innerHTML = fourth;
-            your44.style.color = guess4.value;
-
             response4.innerText = reds(first, second, third, fourth, newKey);
             response4W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 4) {
-            your51.innerHTML = first;
-            your51.style.color = guess1.value;
-            your52.innerHTML = second;
-            your52.style.color = guess2.value;
-            your53.innerHTML = third;
-            your53.style.color = guess3.value;
-            your54.innerHTML = fourth;
-            your54.style.color = guess4.value;
-
             response5.innerText = reds(first, second, third, fourth, newKey);
             response5W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 5) {
-            your61.innerHTML = first;
-            your61.style.color = guess1.value;
-            your62.innerHTML = second;
-            your62.style.color = guess2.value;
-            your63.innerHTML = third;
-            your63.style.color = guess3.value;
-            your64.innerHTML = fourth;
-            your64.style.color = guess4.value;
-
             response6.innerText = reds(first, second, third, fourth, newKey);
             response6W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 6) {
-            your71.innerHTML = first;
-            your71.style.color = guess1.value;
-            your72.innerHTML = second;
-            your72.style.color = guess2.value;
-            your73.innerHTML = third;
-            your73.style.color = guess3.value;
-            your74.innerHTML = fourth;
-            your74.style.color = guess4.value;
-
             response7.innerText = reds(first, second, third, fourth, newKey);
             response7W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 7) {
-            your81.innerHTML = first;
-            your81.style.color = guess1.value;
-            your82.innerHTML = second;
-            your82.style.color = guess2.value;
-            your83.innerHTML = third;
-            your83.style.color = guess3.value;
-            your84.innerHTML = fourth;
-            your84.style.color = guess4.value;
-
             response8.innerText = reds(first, second, third, fourth, newKey);
             response8W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 8) {
-            your91.innerHTML = first;
-            your91.style.color = guess1.value;
-            your92.innerHTML = second;
-            your92.style.color = guess2.value;
-            your93.innerHTML = third;
-            your93.style.color = guess3.value;
-            your94.innerHTML = fourth;
-            your94.style.color = guess4.value;
-
             response9.innerText = reds(first, second, third, fourth, newKey);
             response9W.innerText = whites(first, second, third, fourth, newKey);
 
         } else if (count === 9) {
-            your101.innerHTML = first;
-            your101.style.color = guess1.value;
-            your102.innerHTML = second;
-            your102.style.color = guess2.value;
-            your103.innerHTML = third;
-            your103.style.color = guess3.value;
-            your104.innerHTML = fourth;
-            your104.style.color = guess4.value;
-
             response10.innerText = reds(first, second, third, fourth, newKey);
             response10W.innerText = whites(first, second, third, fourth, newKey);
         }
+        firstC[count].innerHTML = first;
+        firstC[count].style.color = guess1.value;
+        secondC[count].innerHTML = second;
+        secondC[count].style.color = guess2.value;
+        thirdC[count].innerHTML = third;
+        thirdC[count].style.color = guess3.value;
+        fourthC[count].innerHTML = fourth;
+        fourthC[count].style.color = guess4.value;
         if(won){
             gameWon.innerText = "Winner!";
         }
