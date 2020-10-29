@@ -150,19 +150,18 @@
 
     newGame.addEventListener("click", function () {
         newGame.style.color = "#14bdeb";
-        newGame.style.background = "black";
+        newGame.style.background = "#000000";
         if (hard) {
             for(let i = 0; i < 4; i++){
-                let hardKey1 = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-                sequence.push(hardColorKey[hardKey1]);
+                let hardKey = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
+                sequence.push(hardColorKey[hardKey]);
             }
         } else {
             for(let i = 0; i < 4; i++){
-                let key1 = Math.floor(Math.random() * colorKey.length - 1) + 1;
-                sequence.push(colorKey[key1]);
+                let key = Math.floor(Math.random() * colorKey.length - 1) + 1;
+                sequence.push(colorKey[key]);
             }
         }
-        console.log(sequence);
         begin.innerText = "Sequence Generated";
         newGame.disabled = true;
         done.addEventListener("click", function () {
@@ -175,11 +174,6 @@
                 colorInputFields[i].disabled = true;
             }
         });
-    });
-
-    assert.addEventListener("click", function(){
-        onClick(count);
-        count++;
     });
 
     function reds(first, second, third, fourth, colorArr) {
@@ -247,6 +241,10 @@
         return rCWS + " White";
     }
 
+    assert.addEventListener("click", function(){
+        onClick(count);
+        count++;
+    });
     function onClick(){
         let newKey = sequence;
         let first = guess1.value.toLowerCase();
@@ -293,6 +291,9 @@
             response10.innerText = reds(first, second, third, fourth, newKey);
             response10W.innerText = whites(first, second, third, fourth, newKey);
         }
+        if(won){
+            gameWon.innerText = "Winner!";
+        }
         firstC[count].innerHTML = first;
         firstC[count].style.color = guess1.value;
         secondC[count].innerHTML = second;
@@ -301,8 +302,5 @@
         thirdC[count].style.color = guess3.value;
         fourthC[count].innerHTML = fourth;
         fourthC[count].style.color = guess4.value;
-        if(won){
-            gameWon.innerText = "Winner!";
-        }
     }
 })();
