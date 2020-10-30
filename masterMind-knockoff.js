@@ -200,45 +200,45 @@
         return rCRS + " Red ";
     }
 
-    function whites(first, second, third, fourth, colorArr) {
+    function whites(first, second, third, fourth, colorArr){
         let rCWS = 0;
         let firstIsRed = false;
         let secondIsRed = false;
         let thirdIsRed = false;
         let fourthIsRed = false;
-        if (first === colorArr[0]) {
+        if(first === colorArr[0]){
             colorArr = colorArr.join(" ").replace(first, "").split(" ");
             firstIsRed = true;
         }
-        if (second === colorArr[1]) {
+        if(second === colorArr[1]){
             colorArr = colorArr.join(" ").replace(second, "").split(" ");
             secondIsRed = true;
         }
-        if (third === colorArr[2]) {
+        if(third === colorArr[2]){
             colorArr = colorArr.join(" ").replace(third, "").split(" ");
             thirdIsRed = true;
         }
-        if (fourth === colorArr[3]) {
+        if(fourth === colorArr[3]){
             colorArr = colorArr.join(" ").replace(fourth, "").split(" ");
             fourthIsRed = true;
         }
-        if (colorArr.indexOf(first) !== -1 && !firstIsRed) {
+        if((colorArr.indexOf(first) !== -1) && !firstIsRed){
             rCWS++;
             colorArr = colorArr.join(" ").replace(first, "").split(" ");
         }
-        if (colorArr.indexOf(second) !== -1 && !secondIsRed) {
+        if((colorArr.indexOf(second) !== -1) && !secondIsRed){
             rCWS++;
             colorArr = colorArr.join(" ").replace(second, "").split(" ");
         }
-        if (colorArr.indexOf(third) !== -1 && !thirdIsRed) {
+        if((colorArr.indexOf(third) !== -1) && !thirdIsRed){
             rCWS++;
             colorArr = colorArr.join(" ").replace(third, "").split(" ");
         }
-        if (colorArr.indexOf(fourth) !== -1 && !fourthIsRed) {
+        if(colorArr.indexOf(fourth) !== -1 && !fourthIsRed){
             rCWS++;
             colorArr = colorArr.join(" ").replace(fourth, "").split(" ");
         }
-        return rCWS + " White";
+        return rCWS + "White";
     }
 
     assert.addEventListener("click", function(){
