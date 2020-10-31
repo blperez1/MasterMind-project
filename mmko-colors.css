@@ -1,0 +1,49 @@
+:root {
+    --red: #ff2e00;
+    --black: #000000;
+    --white: #fffaff;
+    --lime: #78fc6a;
+    --tan: #c7aa74;
+    --yellow: #f3de2c;
+    --pink: #e9738f;
+    --cyan: #05c8cc;
+    --green: #034c3c;
+    --brown:  #582b11;
+    --grey: #808080;
+    --olive:  #808000;
+    --orange: #fe7f2d;
+    --purple: #7b1e7a;
+    --blue:  #3772ff;
+}
+
+.black { color: var(--black) }
+.red{ color: var(--red) }
+.lime{ color: var(--lime) }
+.tan{ color: var(--tan) }
+.white{ color: var(--white) }
+.yellow{ color: var(--yellow) }
+.pink{ color: var(--pink) }
+.cyan{ color: var(--cyan) }
+.green{ color: var(--green) }
+.brown{ color: var(--brown) }
+.grey{ color: var(--grey) }
+.olive{ color: var(--olive) }
+.orange{ color: var(--orange) }
+.purple{ color: var(--purple) }
+.blue{ color: var(--blue) }
+
+.bg-black { background-color: var(--black) }
+.bg-red { background-color: var(--red) }
+.bg-lime { background-color: var(--lime) }
+.bg-tan { background-color: var(--tan) }
+.bg-white { background-color: var(--white) }             
+.bg-yellow { background-color: var(--yellow) }
+.bg-pink { background-color: var(--pink) }
+.bg-cyan { background-color: var(--cyan) }
+.bg-green { background-color: var(--green) }
+.bg-brown { background-color: var(--brown) }
+.bg-grey { background-color: var(--grey) }
+.bg-olive { background-color: var(--olive) }
+.bg-orange { background-color: var(--orange) }
+.bg-purple { background-color: var(--purple) }
+.bg-blue { background-color: var(--blue) }
