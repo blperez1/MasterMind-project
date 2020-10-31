@@ -1,3 +1,9 @@
+function getCheckedColor(checkboxname){
+    const checkboxes = document.querySelectorAll(`[name=${checkboxname}]`)
+    return [...checkboxes].filter(cb => cb.checked)[0].dataset.color;
+}
+
+
 (function () {
 
 console.log("To begin, you can either start the game with 6 colors or select 'hard mode' first and then start the game for 12 colors " +"\n" +
@@ -298,3 +304,4 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
         fourthC[count].innerHTML = fourth;
         fourthC[count].style.color = guess4.value;
     }
+})()
