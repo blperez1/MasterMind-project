@@ -20,119 +20,103 @@
     <button id="newGame">Start Game</button>
     <p class="easyOptions"><span><strong>Options: </strong></span><span class="blue">Blue</span>, <span class="brown">Brown</span>, <span class="yellow">Yellow</span>, <span class="orange">Orange</span>, <span class="green">Green</span> and <span class="pink">Pink</span></p><br>
 </main>
-<textarea rows="9" cols="100" class="notes">Not In Sequence:
+<textarea rows="9" cols="100" class="notes">
+Not In Sequence:
 
 Possible Colors:
 
-In Sequence: </textarea>
-<div class="gameBoard">
-    <div class="inputs">
-        <label for="colorInput1">First Color </label>
-        <input class="colorGuess" id="colorInput1" type="text" placeholder="here" onfocus="this.value=''"><br>
+In Sequence:
+</textarea>
+
+<div class="colorSelections">
+    <div class="colorField">
+        <label>First Color
+            <input class="colorGuess" id="colorInput1" type="text" placeholder="here" onfocus="this.value=''"><br>
+        </label>
     </div>
-    <div class="inputs">
-        <label for="colorInput2">Second Color </label>
-        <input class="colorGuess"  id="colorInput2" type="text" placeholder="here" onfocus="this.value=''"><br>
+    
+    <div class="colorField">
+        <label>Second Color
+            <input class="colorGuess"  id="colorInput2" type="text" placeholder="here" onfocus="this.value=''"><br>
+        </label>
     </div>
-    <div class="inputs">
-        <label for="colorInput3">Third Color </label>
-        <input class="colorGuess"  id="colorInput3" type="text" placeholder="here" onfocus="this.value=''"><br>
+    <div class="colorField">
+        <label>Third Color 
+            <input class="colorGuess"  id="colorInput3" type="text" placeholder="here" onfocus="this.value=''"><br>
+        </label>
     </div>
-    <div class="inputs">
-        <label for="colorInput4">Fourth Color </label>
-        <input class="colorGuess"  id="colorInput4" type="text" placeholder="here" onfocus="this.value=''"><br>
+    
+    <div class="colorField">
+        <label>Fourth Color
+            <input class="colorGuess"  id="colorInput4" type="text" placeholder="here" onfocus="this.value=''"><br>
+        </label>
     </div>
+
     <button type="submit" id="submit">Assert</button><br>
     <p id="winner"></p><br>
 </div>
 <div class="responses">
-    <table class="guesses">
-        <tr>
-            <td><h3>Response:</h3></td>
-            <td><span id="start">-- --</span></td>
-        </tr>
-
-        <tr>
-            <td>#1</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="one" class="outputRed"></span><span id="oneWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#2</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="two" class="outputRed"></span><span id="twoWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#3</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="three" class="outputRed"></span><span id="threeWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#4</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="four" class="outputRed"></span><span id="fourWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#5</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="five" class="outputRed"></span><span id="fiveWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#6</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="six" class="outputRed"></span><span id="sixWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#7</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="seven" class="outputRed"></span><span id="sevenWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#8</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="eight" class="outputRed"></span><span id="eightWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#9</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="nine" class="outputRed"></span><span id="nineWhite" class="outputWhite"></span></td>
-        </tr>
-        <tr>
-            <td>#10</td>
-            <td><span class="yourColor c1">..</span> | <span class="yourColor c2">..</span> | <span class="yourColor c3">..</span> | <span class="yourColor c4">..</span></td>
-        </tr>
-        <tr>
-            <td>R/W</td>
-            <td><span id="ten" class="outputRed"></span><span id="tenWhite" class="outputWhite"></span></td>
-        </tr>
-    </table>
+    <h3>Response:</h3>
+    <div id="guessMatrix">      
+        <div class="row">
+            <p class="row-header">Attempt-1</p>
+            <p class="color-sequence">
+                <span class="cell bg-pink"></span>
+                <span class="cell bg-cyan"></span>
+                <span class="cell bg-olive"></span>
+                <span class="cell bg-blue"></span>
+            </p>
+            <p class="results">
+                <span class="result-cell bg-red white">0</span>
+                <span class="result-cell bg-white red">0</span>
+            </p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-2</p>
+            <p id="attemptOne" class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-3</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-4</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-5</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-6</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-7</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-8</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-9</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+        <div class="row">
+            <p class="row-header">Attempt-10</p>
+            <p class="color-sequence"></p>
+            <p class="results"></p>
+        </div>
+    </div>
     <button id="done"><span class="red">Show</span>  <span class="white">Solution</span></button>
 </div>
 <div class="answerKey">
