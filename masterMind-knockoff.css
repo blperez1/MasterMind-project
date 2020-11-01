@@ -178,7 +178,7 @@ input:focus::placeholder{
     margin-top: 1em;
 }
 
-.colorSequence{
+#colorSequence{
     display: flex;
     flex-flow: row nowrap;
     gap: 2px;
