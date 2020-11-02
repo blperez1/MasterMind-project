@@ -31,20 +31,10 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
         "use the provided notes box as needed to keep track of your options you have eliminated, you have 10 guesses to solve the code!");
 
     const colorKey = [
-        "blue",
-        "yellow",
-        "orange",
-        "green",
-        "pink",
-        "brown"
+        "blue", "yellow", "orange", "green", "pink", "brown"
     ];
     const hardColorKey = colorKey.concat[
-        "olive",
-        "purple",
-        "grey",
-        "lime",
-        "cyan",
-        "tan"
+        "olive", "purple", "grey", "lime", "cyan", "tan"
     ];
 
     let sequence = [];
