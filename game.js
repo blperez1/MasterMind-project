@@ -241,64 +241,23 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
     }
 
     assert.addEventListener("click", function(){
-        onClick(count);
-        count++;
+        assertSequence(count++);
     });
-    function onClick(){
-        let newKey = sequence;
-        let first = guess1.value.toLowerCase();
-        let second = guess2.value.toLowerCase();
-        let third = guess3.value.toLowerCase();
-        let fourth = guess4.value.toLowerCase();
-        if (count === 0) {
-            response1.innerText = reds(first, second, third, fourth, newKey);
-            response1W.innerText = whites(first, second, third, fourth, newKey);
 
-        } else if (count === 1) {
-            response2.innerText = reds(first, second, third, fourth, newKey);
-            response2W.innerText = whites(first, second, third, fourth, newKey);
 
-        } else if (count === 2) {
-            response3.innerText = reds(first, second, third, fourth, newKey);
-            response3W.innerText = whites(first, second, third, fourth, newKey);
+    function assertSequence(attempts){
+        let [one,two,three,four] = sequence;
+        const guessSequence = {
+            "one": one,
+            "two": two,
+            "three": three,
+            "four": four
+        };
 
-        } else if (count === 3) {
-            response4.innerText = reds(first, second, third, fourth, newKey);
-            response4W.innerText = whites(first, second, third, fourth, newKey);
-
-        } else if (count === 4) {
-            response5.innerText = reds(first, second, third, fourth, newKey);
-            response5W.innerText = whites(first, second, third, fourth, newKey);
-
-        } else if (count === 5) {
-            response6.innerText = reds(first, second, third, fourth, newKey);
-            response6W.innerText = whites(first, second, third, fourth, newKey);
-
-        } else if (count === 6) {
-            response7.innerText = reds(first, second, third, fourth, newKey);
-            response7W.innerText = whites(first, second, third, fourth, newKey);
-
-        } else if (count === 7) {
-            response8.innerText = reds(first, second, third, fourth, newKey);
-            response8W.innerText = whites(first, second, third, fourth, newKey);
-
-        } else if (count === 8) {
-            response9.innerText = reds(first, second, third, fourth, newKey);
-            response9W.innerText = whites(first, second, third, fourth, newKey);
-
-        } else if (count === 9) {
-            response10.innerText = reds(first, second, third, fourth, newKey);
-            response10W.innerText = whites(first, second, third, fourth, newKey);
-        }
         if(won){
             gameWon.innerText = "Winner!";
+        } else {
+            displayResults(attempts, guessSequence);
         }
-        firstC[count].innerHTML = first;
-        firstC[count].style.color = guess1.value;
-        secondC[count].innerHTML = second;
-        secondC[count].style.color = guess2.value;
-        thirdC[count].innerHTML = third;
-        thirdC[count].style.color = guess3.value;
-        fourthC[count].innerHTML = fourth;
-        fourthC[count].style.color = guess4.value;
+
     }
