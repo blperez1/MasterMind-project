@@ -38,6 +38,7 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
     ];
 
     let sequence = [];
+    const answerSequence = [];
     let hardMode = document.getElementById("increaseDiff");
     let hard = false;
     let isHard = document.getElementById("isHardMode");
@@ -54,7 +55,6 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
             sequence.push(this.dataset.color)
             buildSequence(sequence)
         }
-        console.log(sequence)
     }))
 
 
@@ -74,6 +74,7 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
     // class selects
     let yourGuesses = document.getElementsByClassName("yourColor");
     let colorInputFields = document.getElementsByClassName("colorGuess");
+    
     let redResponses = document.getElementsByClassName("outputRed");
     for(let i = 0; i < redResponses.length; i++){
         redResponses[i].style.color = "red";
@@ -151,22 +152,22 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
         if (hard) {
             for(let i = 0; i < 4; i++){
                 let hardKey = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-                sequence.push(hardColorKey[hardKey]);
+                answerSequence.push(hardColorKey[hardKey]);
             }
         } else {
             for(let i = 0; i < 4; i++){
                 let key = Math.floor(Math.random() * colorKey.length - 1) + 1;
-                sequence.push(colorKey[key]);
+                answerSequence.push(colorKey[key]);
             }
         }
-        
+        console.log(answerSequence)
         begin.innerText = "Sequence Generated";
         newGame.disabled = true;
         done.addEventListener("click", function () {
-            answer1.innerHTML = sequence[0];
-            answer2.innerHTML = sequence[1];
-            answer3.innerHTML = sequence[2];
-            answer4.innerHTML = sequence[3];
+            answer1.innerHTML = answerSequence[0];
+            answer2.innerHTML = answerSequence[1];
+            answer3.innerHTML = answerSequence[2];
+            answer4.innerHTML = answerSequence[3];
             for(let i = 0; i < colorInputFields.length; i++){
                 colorInputFields[i].style.background = "#000000";
                 colorInputFields[i].disabled = true;
