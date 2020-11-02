@@ -4,7 +4,22 @@ function getCheckedColor(checkboxname){
 }
 
 function buildSequence(colors) {
-    const squares = [...document.querySelector('#colorSequence').children]
+    const cells = [...document.querySelector('#colorSequence').children]
+    cells.map( (cell, i) => {
+        if (colors[i]) cell.classList.replace("bg-grey", `bg-${colors[i]}`)
+    })
+}
+
+function displayResults(rowCount, sequenceObj) {
+    document.querySelectorAll(".color-sequence")[rowCount].innerHTML = renderSequence(sequenceObj);
+    document.querySelectorAll(".results")[rowCount].innerHTML = renderResult(sequenceObj);
+}
+
+function renderSequence({one,two,three,four}) {
+    return `<span class="cell bg-${one}"></span>
+        <span class="cell bg-${two}"></span>
+        <span class="cell bg-${three}"></span>
+        <span class="cell bg-${four}"></span>`
 }
 
 console.log("To begin, you can either start the game with 6 colors or select 'hard mode' first and then start the game for 12 colors " +"\n" +
