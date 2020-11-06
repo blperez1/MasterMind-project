@@ -1,8 +1,3 @@
-function getCheckedColor(checkboxname){
-    const checkboxes = document.querySelectorAll(`[name=${checkboxname}]`)
-    return [...checkboxes].filter(cb => cb.checked)[0].dataset.color;
-}
-
 function buildSequence(colors) {
     const cells = [...document.querySelector('#colorSequence').children]
     cells.map( (cell, i) => {
@@ -10,9 +5,9 @@ function buildSequence(colors) {
     })
 }
 
-function displayResults(rowCount, sequenceObj) {
-    document.querySelectorAll(".color-sequence")[rowCount].innerHTML = renderSequence(sequenceObj);
-    document.querySelectorAll(".results")[rowCount].innerHTML = renderResult(sequenceObj);
+function displayResults(rowCount, sequenceArr) {
+    document.querySelectorAll(".color-sequence")[rowCount].innerHTML = renderSequence(sequenceArr);
+    document.querySelectorAll(".results")[rowCount].innerHTML = renderResult(sequenceArr);
 }
 
 function renderSequence({one,two,three,four}) {
@@ -23,46 +18,28 @@ function renderSequence({one,two,three,four}) {
 }
 
 function renderResult(attemptSequence) {
-    let rCWS = 0;
-    let firstIsRed = false;
-    let secondIsRed = false;
-    let thirdIsRed = false;
-    let fourthIsRed = false;
+    let result = "";
+    let redCount = 0;
+    let whiteCount = 0;
 
+    if(JSON.stringify(attemptSequence) === JSON.stringify(answerSequence)){
+       result = `<span class="result-cell bg-red white">0</span><span class="result-cell bg-white black">4</span>`
+    } else {
+        for (const color in attemptSequence) {
+            if(!answerSequence.includes(attemptSequence[color])) redCount++;
+            if(answerSequence.includes(attemptSequence[color])) whiteCount++;  
+        }
+        result = `<span class="result-cell bg-red white">${redCount}</span>
+        <span class="result-cell bg-white black">${whiteCount}</span>`
+    }
 
-    if(first === colorArr[0]){
-        colorArr = colorArr.join(" ").replace(first, "").split(" ");
-        firstIsRed = true;
-    }
-    if(second === colorArr[1]){
-        colorArr = colorArr.join(" ").replace(second, "").split(" ");
-        secondIsRed = true;
-    }
-    if(third === colorArr[2]){
-        colorArr = colorArr.join(" ").replace(third, "").split(" ");
-        thirdIsRed = true;
-    }
-    if(fourth === colorArr[3]){
-        colorArr = colorArr.join(" ").replace(fourth, "").split(" ");
-        fourthIsRed = true;
-    }
-    if((colorArr.indexOf(first) !== -1) && !firstIsRed){
-        rCWS++;
-        colorArr = colorArr.join(" ").replace(first, "").split(" ");
-    }
-    if((colorArr.indexOf(second) !== -1) && !secondIsRed){
-        rCWS++;
-        colorArr = colorArr.join(" ").replace(second, "").split(" ");
-    }
-    if((colorArr.indexOf(third) !== -1) && !thirdIsRed){
-        rCWS++;
-        colorArr = colorArr.join(" ").replace(third, "").split(" ");
-    }
-    if(colorArr.indexOf(fourth) !== -1 && !fourthIsRed){
-        rCWS++;
-        colorArr = colorArr.join(" ").replace(fourth, "").split(" ");
-    }
-    return rCWS + "White";
+    return result
+    
+}
+
+function resetSequenceAttempt() {
+    const cells = [...document.querySelector("#colorSequence").children];
+    cells.map(cell => cell.classList.value = "cell bg-grey")
 }
 
 console.log("To begin, you can either start the game with 6 colors or select 'hard mode' first and then start the game for 12 colors " +"\n" +
@@ -73,169 +50,163 @@ console.log("To begin, you can either start the game with 6 colors or select 'ha
         "'x' white response means that 'x' many colors are correct but in the wrong spot in the sequence (no particular order as well) " + "\n" +
         "use the provided notes box as needed to keep track of your options you have eliminated, you have 10 guesses to solve the code!");
 
-    const colorKey = [
-        "blue", "yellow", "orange", "green", "pink", "brown"
-    ];
-    const hardColorKey = colorKey.concat[
-        "olive", "purple", "grey", "lime", "cyan", "tan"
-    ];
+const colorKey = ["blue", "yellow", "orange", "green", "pink", "brown"];
+const hardColorKey = colorKey.concat["olive", "purple", "grey", "lime", "cyan", "tan"];
 
-    let sequence = [];
-    const answerSequence = [];
-    let hardMode = document.getElementById("increaseDiff");
-    let hard = false;
-    let isHard = document.getElementById("isHardMode");
-    hardMode.addEventListener("click", function () {
-        hard = true;
-        hardMode.style.color = "#14bdeb";
-        hardMode.style.background = "black";
-        isHard.innerText = "Enabled";
-        hardMode.disabled = true;
-    });
+let sequence = [];
+const answerSequence = [];
+let hardMode = document.getElementById("increaseDiff");
+let hard = false;
+let isHard = document.getElementById("isHardMode");
+hardMode.addEventListener("click", function () {
+    hard = true;
+    hardMode.style.color = "#14bdeb";
+    hardMode.style.background = "black";
+    isHard.innerText = "Enabled";
+    hardMode.disabled = true;
+});
 
-    document.querySelectorAll('.checkBox').forEach(btn => btn.addEventListener("click", function(){
-        if(sequence.length < 4){
-            sequence.push(this.dataset.color)
-            buildSequence(sequence)
-        }
-    }))
+let won = false;
+const newGame = document.getElementById("newGame");
+const done = document.getElementById("done");
+const gameWon = document.getElementById("winner");
+let count = 0;
+//answer key
+let answer1 = document.getElementById("key1");
+let answer2 = document.getElementById("key2");
+let answer3 = document.getElementById("key3");
+let answer4 = document.getElementById("key4");
+//assert buttons
+let assert = document.getElementById("submit");
 
+// class selects
+let yourGuesses = document.getElementsByClassName("yourColor");
+let colorInputFields = document.getElementsByClassName("colorGuess");
 
-    let won = false;
-    const newGame = document.getElementById("newGame");
-    const done = document.getElementById("done");
-    const gameWon = document.getElementById("winner");
-    let count = 0;
-    //answer key
-    let answer1 = document.getElementById("key1");
-    let answer2 = document.getElementById("key2");
-    let answer3 = document.getElementById("key3");
-    let answer4 = document.getElementById("key4");
-    //assert buttons
-    let assert = document.getElementById("submit");
-   
-    // class selects
-    let yourGuesses = document.getElementsByClassName("yourColor");
-    let colorInputFields = document.getElementsByClassName("colorGuess");
-    
-    let redResponses = document.getElementsByClassName("outputRed");
+let redResponses = document.getElementsByClassName("outputRed");
+for(let i = 0; i < redResponses.length; i++){
+    redResponses[i].style.color = "red";
+}
+let whiteResponses = document.getElementsByClassName("outputWhite");
+for(let i = 0; i < whiteResponses.length; i++){
+    whiteResponses[i].style.color = "white";
+}
+//your inputs
+let firstC = document.getElementsByClassName("c1");
+let secondC = document.getElementsByClassName("c2");
+let thirdC = document.getElementsByClassName("c3");
+let fourthC = document.getElementsByClassName("c4");
+//response
+let begin = document.getElementById("start");
+
+let restart = document.getElementById("link");
+let newText = document.getElementById("textCycle1");
+let gameText = document.getElementById("textCycle2");
+let restartCount = 0;
+
+const reloadGame = function(restartCount){
+    if(restartCount % 2 === 0){
+        newText.style.color = "#ff2e00";
+        gameText.style.color = "#fffaff";
+    } else {
+        newText.style.color = "#fffaff";
+        gameText.style.color = "#ff2e00";
+    }
+    textRestart();
+    for(let i = 0; i < colorInputFields.length; i++){
+        colorInputFields[i].style.background = "#171717";
+        colorInputFields[i].disabled = false;
+    }
+}
+const textRestart = function(){
+    hard = false;
+    sequence = [];
+    hardMode.disabled = false;
+    newGame.disabled = false;
+    gameWon.innerText = "";
+    isHard.innerText = "";
+    answer1.innerHTML = "--";
+    answer2.innerHTML = "--";
+    answer3.innerHTML = "--";
+    answer4.innerHTML = "--";
+    begin.innerText = "";
+    hardMode.style.color = "#fffafb";
+    hardMode.style.background = "#4d473d";
+    newGame.style.color = "#fffafb";
+    newGame.style.background = "#4d473d";
     for(let i = 0; i < redResponses.length; i++){
-        redResponses[i].style.color = "red";
+        redResponses[i].innerText = "";
     }
-    let whiteResponses = document.getElementsByClassName("outputWhite");
     for(let i = 0; i < whiteResponses.length; i++){
-        whiteResponses[i].style.color = "white";
+        whiteResponses[i].innerText = "";
     }
-    //your inputs
+    for(let i = 0; i < yourGuesses.length; i++){
+        yourGuesses[i].innerText = "..";
+        yourGuesses[i].style.color = "#797b84";
+    }
+}
+restart.addEventListener("click", function(){
+    count = 0;
+    reloadGame(restartCount);
+    restartCount++;
+});
 
+document.querySelectorAll('.checkBox').forEach(btn => btn.addEventListener("click", function(){
+    if(sequence.length < 4){
+        sequence.push(this.dataset.color)
+        buildSequence(sequence)
+    }
+}))
 
-
-    let firstC = document.getElementsByClassName("c1");
-    let secondC = document.getElementsByClassName("c2");
-    let thirdC = document.getElementsByClassName("c3");
-    let fourthC = document.getElementsByClassName("c4");
-    //response
-    let begin = document.getElementById("start");
-
-    let restart = document.getElementById("link");
-    let newText = document.getElementById("textCycle1");
-    let gameText = document.getElementById("textCycle2");
-    let restartCount = 0;
-
-    const reloadGame = function(restartCount){
-        if(restartCount % 2 === 0){
-            newText.style.color = "#ff2e00";
-            gameText.style.color = "#fffaff";
-        } else {
-            newText.style.color = "#fffaff";
-            gameText.style.color = "#ff2e00";
+newGame.addEventListener("click", function () {
+    newGame.style.color = "#14bdeb";
+    newGame.style.background = "#000000";
+    if (hard) {
+        for(let i = 0; i < 4; i++){
+            let hardKey = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
+            answerSequence.push(hardColorKey[hardKey]);
         }
-        textRestart();
+    } else {
+        for(let i = 0; i < 4; i++){
+            let key = Math.floor(Math.random() * colorKey.length - 1) + 1;
+            answerSequence.push(colorKey[key]);
+        }
+    }
+
+    
+    
+    newGame.disabled = true;
+    done.addEventListener("click", function () {
+        answer1.innerHTML = answerSequence[0];
+        answer2.innerHTML = answerSequence[1];
+        answer3.innerHTML = answerSequence[2];
+        answer4.innerHTML = answerSequence[3];
         for(let i = 0; i < colorInputFields.length; i++){
-            colorInputFields[i].style.background = "#171717";
-            colorInputFields[i].disabled = false;
+            colorInputFields[i].style.background = "#000000";
+            colorInputFields[i].disabled = true;
         }
-    }
-    const textRestart = function(){
-        hard = false;
-        sequence = [];
-        hardMode.disabled = false;
-        newGame.disabled = false;
-        gameWon.innerText = "";
-        isHard.innerText = "";
-        answer1.innerHTML = "--";
-        answer2.innerHTML = "--";
-        answer3.innerHTML = "--";
-        answer4.innerHTML = "--";
-        begin.innerText = "";
-        hardMode.style.color = "#fffafb";
-        hardMode.style.background = "#4d473d";
-        newGame.style.color = "#fffafb";
-        newGame.style.background = "#4d473d";
-        for(let i = 0; i < redResponses.length; i++){
-            redResponses[i].innerText = "";
-        }
-        for(let i = 0; i < whiteResponses.length; i++){
-            whiteResponses[i].innerText = "";
-        }
-        for(let i = 0; i < yourGuesses.length; i++){
-            yourGuesses[i].innerText = "..";
-            yourGuesses[i].style.color = "#797b84";
-        }
-    }
-    restart.addEventListener("click", function(){
-        count = 0;
-        reloadGame(restartCount);
-        restartCount++;
     });
+});
 
-    newGame.addEventListener("click", function () {
-        newGame.style.color = "#14bdeb";
-        newGame.style.background = "#000000";
-        if (hard) {
-            for(let i = 0; i < 4; i++){
-                let hardKey = Math.floor(Math.random() * hardColorKey.length - 1) + 1;
-                answerSequence.push(hardColorKey[hardKey]);
-            }
-        } else {
-            for(let i = 0; i < 4; i++){
-                let key = Math.floor(Math.random() * colorKey.length - 1) + 1;
-                answerSequence.push(colorKey[key]);
-            }
-        }
-        console.log(answerSequence)
-        begin.innerText = "Sequence Generated";
-        newGame.disabled = true;
-        done.addEventListener("click", function () {
-            answer1.innerHTML = answerSequence[0];
-            answer2.innerHTML = answerSequence[1];
-            answer3.innerHTML = answerSequence[2];
-            answer4.innerHTML = answerSequence[3];
-            for(let i = 0; i < colorInputFields.length; i++){
-                colorInputFields[i].style.background = "#000000";
-                colorInputFields[i].disabled = true;
-            }
-        });
-    });
+assert.addEventListener("click", function(){
+    assertSequence(count);
+    count++;
+    resetSequenceAttempt();
+});
 
-    assert.addEventListener("click", function(){
-        assertSequence(count++);
-    });
+function assertSequence(attempts){
+    let [one,two,three,four] = sequence;
+    const guessSequence = {
+        "one": one,
+        "two": two,
+        "three": three,
+        "four": four
+    };
 
-
-    function assertSequence(attempts){
-        let [one,two,three,four] = sequence;
-        const guessSequence = {
-            "one": one,
-            "two": two,
-            "three": three,
-            "four": four
-        };
-
-        if(won){
-            gameWon.innerText = "Winner!";
-        } else {
-            displayResults(attempts, guessSequence);
-        }
-
+    if(won){
+        gameWon.innerText = "Winner!";
+    } else {
+        displayResults(attempts, guessSequence);
     }
+
+}
