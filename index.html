@@ -1,27 +1,35 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="masterMind-knockoff.css">
-    <link rel="stylesheet" href="mmko-colors.css">
-    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
-    <title>Master The Code</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="masterMind-knockoff.css">
+	<link rel="stylesheet" href="mmko-colors.css">
+	<link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+	<title>Master The Code</title>
 </head>
+
 <body>
-<main class="shadow">
-    <h1 id="top">Break Me</h1>
-    <p>(check console for description)</p>
-    <h2 class="colorDescription"><span class="red">Red</span> = right color right spot | <span class="white">White</span> = right color wrong spot</h2>
-    <h5 class="thin">(no particular order)</h5><br>
-    <button id="increaseDiff">Hard Mode</button><p id="isHardMode"></p><br>
-    <p class="otherColors">(Hard Mode Adds: <span class="grey">Grey</span>, <span class="cyan">Cyan</span>, <span class="olive">Olive</span>, <span class="tan">Tan</span>, <span class="purple">Purple</span> and <span class="lime">Lime</span>)</p><br>
-    <button id="newGame">Start Game</button>
-    <p class="easyOptions"><span><strong>Options: </strong></span><span class="blue">Blue</span>, <span class="brown">Brown</span>, <span class="yellow">Yellow</span>, <span class="orange">Orange</span>, <span class="green">Green</span> and <span class="pink">Pink</span></p><br>
-</main>
-<textarea rows="9" cols="100" class="notes">
+	<main class="shadow">
+		<h1 id="top">Break Me</h1>
+		<p>(check console for description)</p>
+		<h2 class="colorDescription"><span class="red">Red</span> = right color right spot | <span
+				class="white">White</span> = right color wrong spot</h2>
+		<h5 class="thin">(no particular order)</h5><br>
+		<button id="increaseDiff">Hard Mode</button>
+		<p id="isHardMode"></p><br>
+		<p class="otherColors">(Hard Mode Adds: <span class="grey">Grey</span>, <span class="cyan">Cyan</span>, <span
+				class="olive">Olive</span>, <span class="tan">Tan</span>, <span class="purple">Purple</span> and <span
+				class="lime">Lime</span>)</p><br>
+		<button id="newGame">Start Game</button>
+		<p class="easyOptions"><span><strong>Options: </strong></span><span class="blue">Blue</span>, <span
+				class="brown">Brown</span>, <span class="yellow">Yellow</span>, <span class="orange">Orange</span>,
+			<span class="green">Green</span> and <span class="pink">Pink</span></p><br>
+	</main>
+	<textarea rows="9" cols="100" class="notes">
 Not In Sequence:
 
 Possible Colors:
@@ -29,100 +37,102 @@ Possible Colors:
 In Sequence:
 </textarea>
 
-<div id="gameBoard">
-    <div class="colorSelections">
-        <div class="colorField">
-            <p>First Color</p>
-            <div class="colorOptions">
-                <input id="checkbox-1" class="checkBox" name="color-1" data-color="blue" type="radio" >
-                <label for="checkbox-1" class="checkBox-Mask bg-blue"></label>
-                <input id="checkbox-2" class="checkBox" name="color-1" data-color="brown" type="radio" >
-                <label for="checkbox-2" class="checkBox-Mask bg-brown"></label>
-                <input id="checkbox-3" class="checkBox" name="color-1" data-color="yellow" type="radio" >
-                <label for="checkbox-3" class="checkBox-Mask bg-yellow"></label>
-                <input id="checkbox-4" class="checkBox" name="color-1" data-color="orange" type="radio" >
-                <label for="checkbox-4" class="checkBox-Mask bg-orange"></label>
-                <input id="checkbox-5" class="checkBox" name="color-1" data-color="green" type="radio" >
-                <label for="checkbox-5" class="checkBox-Mask bg-green"></label>
-                <input id="checkbox-6" class="checkBox" name="color-1" data-color="pink" type="radio" >
-                <label for="checkbox-6" class="checkBox-Mask bg-pink"></label>
-            </div>
-        </div>      
-        <div id="colorSequence">
-            <p id="cell-1" class="cell bg-grey"></p>
-            <p id="cell-2" class="cell bg-grey"></p>
-            <p id="cell-3" class="cell bg-grey"></p>
-            <p id="cell-4" class="cell bg-grey"></p>
-        </div>
-        
-    
-        <button type="submit" id="submit">Assert</button>
-    </div>
-    <div class="responses">
-        <h3>Response:</h3>
-        <div id="guessMatrix">      
-            <div class="row">
-                <p class="row-header">Attempt-1</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-2</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-3</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-4</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-5</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-6</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-7</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-8</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-9</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-            <div class="row">
-                <p class="row-header">Attempt-10</p>
-                <p class="color-sequence"></p>
-                <p class="results"></p>
-            </div>
-        </div>
-        <button id="done"><span class="red">Show</span>  <span class="white">Solution</span></button>
-    </div>
-</div>
+	<div id="gameBoard">
+		<div class="colorSelections">
+			<div class="colorField">
+				<p>Color Keys</p>
+				<div class="colorOptions">
+					<input id="checkbox-1" class="checkBox" name="color-1" data-color="blue" type="radio">
+					<label for="checkbox-1" class="checkBox-Mask bg-blue"></label>
+					<input id="checkbox-2" class="checkBox" name="color-1" data-color="brown" type="radio">
+					<label for="checkbox-2" class="checkBox-Mask bg-brown"></label>
+					<input id="checkbox-3" class="checkBox" name="color-1" data-color="yellow" type="radio">
+					<label for="checkbox-3" class="checkBox-Mask bg-yellow"></label>
+					<input id="checkbox-4" class="checkBox" name="color-1" data-color="orange" type="radio">
+					<label for="checkbox-4" class="checkBox-Mask bg-orange"></label>
+					<input id="checkbox-5" class="checkBox" name="color-1" data-color="green" type="radio">
+					<label for="checkbox-5" class="checkBox-Mask bg-green"></label>
+					<input id="checkbox-6" class="checkBox" name="color-1" data-color="pink" type="radio">
+					<label for="checkbox-6" class="checkBox-Mask bg-pink"></label>
+				</div>
+			</div>
+			<div id="colorSequence">
+				<p id="cell-1" class="cell bg-grey"></p>
+				<p id="cell-2" class="cell bg-grey"></p>
+				<p id="cell-3" class="cell bg-grey"></p>
+				<p id="cell-4" class="cell bg-grey"></p>
+			</div>
 
-<p id="winner"></p>
 
-<div class="answerKey">
-    <h3>Answer key:</h3>
-    <h2><span id="key1">--</span> | <span id="key2">--</span> | <span id="key3">--</span> | <span id="key4">--</span></h2><br>
-    <button id="link"><a href="#top"><span id="textCycle1">New </span><span id="textCycle2">Game</span></a></button>
-</div>
-<script src="./game.js"></script>
+			<button type="submit" id="submit">Assert</button>
+		</div>
+		<div class="responses">
+			<div class="header"><h3>Response:</h3> <span id="start"></span></div>
+			<div id="guessMatrix">
+				<div class="row">
+					<p class="row-header">Attempt-1</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-2</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-3</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-4</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-5</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-6</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-7</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-8</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-9</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+				<div class="row">
+					<p class="row-header">Attempt-10</p>
+					<p class="color-sequence"></p>
+					<p class="results"></p>
+				</div>
+			</div>
+			<button id="done"><span class="red">Show</span> <span class="white">Solution</span></button>
+		</div>
+	</div>
+
+	<p id="winner"></p>
+
+	<div class="answerKey">
+		<h3>Answer key:</h3>
+		<h2><span id="key1">--</span> | <span id="key2">--</span> | <span id="key3">--</span> | <span
+				id="key4">--</span></h2><br>
+		<button id="link"><a href="#top"><span id="textCycle1">New </span><span id="textCycle2">Game</span></a></button>
+	</div>
+	<script src="./game.js"></script>
 </body>
+
 </html>
