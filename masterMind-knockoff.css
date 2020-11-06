@@ -18,6 +18,11 @@ body {
 .shadow{
     text-shadow: 1px 1px black;
 }
+.header{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
 .guesses{
     display: flex;
     justify-content: center;
