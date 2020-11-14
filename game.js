@@ -38,8 +38,8 @@
     let gameText = document.getElementById("textCycle2");
     let restartCount = 0;
 
-    const reloadGame = function(restartCount){
-        if(restartCount % 2 === 0){
+    const reloadGame = function(_restartCount){
+        if(_restartCount % 2 === 0){
             newText.style.color = "#ff2e00";
             gameText.style.color = "#fffaff";
         } else {
@@ -69,9 +69,7 @@
 
     function buildSequence(colors) {
         const cells = [...document.querySelector('#colorSequence').children]
-        cells.map( (cell, i) => {
-            if (colors[i]) cell.classList.replace("bg-grey", `bg-${colors[i]}`)
-        })
+        cells.map((cell, i) => {if (colors[i]) return cell.classList.replace("bg-grey", `bg-${colors[i]}`)})
     }
 
     function displayResults(rowCount, sequenceArr) {
@@ -118,7 +116,7 @@
 
     function resetSequenceAttempt() {
         const cells = [...document.querySelector("#colorSequence").children];
-        cells.map(cell => cell.classList.value = "cell bg-grey")
+        cells.forEach(cell => cell.classList.value = "cell bg-grey")
     }
 
     function generateGameSequence(gameType = false){
